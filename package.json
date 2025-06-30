@@ -1,0 +1,37 @@
+{
+  "name": "alya.js",
+  "version": "0.1.0",
+  "main": "dist/esm/index.js",
+  "scripts": {
+    "build": "rm -rf dist && mkdir dist && cp README.md dist/ && tsc --module node16 --outDir dist/esm && echo '{\"type\": \"module\"}' > dist/esm/package.json && tsc --module commonjs --outDir dist/cjs && echo '{\"type\": \"commonjs\"}' > dist/cjs/package.json",
+    "test": "node --experimental-strip-types --env-file=.env test.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^24.0.7",
+    "oceanic.js": "^1.12.0",
+    "typescript": "^5.8.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/levisantosp/alya.js"
+  },
+  "bugs": {
+    "url": "https://github.com/levisantosp/alya.js/issues"
+  },
+  "exports": {
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.js"
+  },
+  "peerDependencies": {
+    "oceanic.js": "^1.12.0"
+  },
+  "dependencies": {
+    "colors": "^1.4.0",
+    "moment": "^2.30.1"
+  }
+}
